@@ -18,10 +18,6 @@ public class Menu {
         return menus;
     }
 
-    public void setmenus(List<MenuItem> menus) {
-        this.menus = menus;
-    }
-
     public String getCategory() {
         return category;
     }

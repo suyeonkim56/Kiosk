@@ -12,29 +12,18 @@ public class MenuItem {
         this.explain = explain;
     }
 
-    //getter setter
+    //getter
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getExplain() {
         return explain;
     }
 
-    public void setExplain(String explain) {
-        this.explain = explain;
-    }
 
 }
