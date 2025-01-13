@@ -65,10 +65,14 @@ public class Kiosk {
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }
-            } else if (input == 0) {
+            }
+            // 0 입력
+            else if (input == 0) {
                 System.out.println("프로그램을 종료합니다");
                 break;
-            } else {
+            }
+            //잘못된 숫자 입력
+            else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요");
             }
         }
