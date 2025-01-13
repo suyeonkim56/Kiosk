@@ -25,4 +25,13 @@ public class Menu {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public void printMenus(Menu menu){
+        System.out.println("[ " + menu.getCategory()+" MENU ]");
+        int i=1;
+        for (MenuItem menuItem : menus) {
+            System.out.println(i++ + ". " + menuItem.getName());
+        }
+        System.out.println("0. 뒤로가기      | 뒤로가기");
+    }
 }
