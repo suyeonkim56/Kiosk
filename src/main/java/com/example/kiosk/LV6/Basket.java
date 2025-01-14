@@ -3,6 +3,7 @@ package com.example.kiosk.LV6;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Basket {
     List<MenuItem> basket = new ArrayList<>();
@@ -18,15 +19,14 @@ public class Basket {
     }
 
     //장바구니에 추가
-    public void addItem(MenuItem item){
+    public void addItem(MenuItem item) {
         Scanner sc = new Scanner(System.in);
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인        2. 취소");
         int answer = sc.nextInt();
-        if(answer == 1)
-        {
+        if (answer == 1) {
             basket.add(item);
-            System.out.println(item.getName()+" 이 장바구니에 추가되었습니다.");
+            System.out.println(item.getName() + " 이 장바구니에 추가되었습니다.");
         } else if (answer == 2) {
             System.out.println("메뉴판으로 돌아갑니다.");
         } else {
@@ -35,14 +35,15 @@ public class Basket {
     }
 
     //장바구니 초기화
-    public void resetItem(){
+    public void resetItem() {
         basket.clear();
     }
 
     //장바구니 계산
-    public double calItem(){
+    public double calItem() {
         Scanner sc = new Scanner(System.in);
         double sum = 0;
+        AtomicInteger i = new AtomicInteger(1);
         for (MenuItem menuItem : basket) {
             sum += menuItem.getPrice();
         }
@@ -50,9 +51,7 @@ public class Basket {
         System.out.println("아래와 같이 주문 하시겠습니까?");
         System.out.println();
         System.out.println("[ Orders ]");
-        for (MenuItem menuItem : basket) {
-            System.out.println("선택한 메뉴: " + menuItem.getName() + " | W" + menuItem.getPrice() + " | " + menuItem.getExplain());
-        }
+        basket.forEach(item -> System.out.println("선택한 메뉴: " + item.getName() + " | W" + item.getPrice() + " | " + item.getExplain()));
         System.out.println("[ Total ]");
         System.out.println("W " + sum);
         System.out.println("1. 주문      2. 메뉴판");
@@ -60,20 +59,19 @@ public class Basket {
     }
 
     //할인 계산
-    public void calculation(int discountNumber, double sum){
-        if(discountNumber == 1)
-        {
-            double finalSum = sum - (discount.국가유공자.getDiscountpercent() * sum /100);
-            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f",finalSum) + " 입니다.");
+    public void calculation(int discountNumber, double sum) {
+        if (discountNumber == 1) {
+            double finalSum = sum - (discount.국가유공자.getDiscountpercent() * sum / 100);
+            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         } else if (discountNumber == 2) {
-            double finalSum = sum - (discount.군인.getDiscountpercent() * sum /100);
-            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f",finalSum) + " 입니다.");
+            double finalSum = sum - (discount.군인.getDiscountpercent() * sum / 100);
+            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         } else if (discountNumber == 3) {
-            double finalSum = sum - (discount.학생.getDiscountpercent() * sum /100);
-            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f",finalSum) + " 입니다.");
+            double finalSum = sum - (discount.학생.getDiscountpercent() * sum / 100);
+            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         } else if (discountNumber == 4) {
-            double finalSum = sum - (discount.일반.getDiscountpercent() * sum /100);
-            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f",finalSum) + " 입니다.");
+            double finalSum = sum - (discount.일반.getDiscountpercent() * sum / 100);
+            System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         }
     }
 }

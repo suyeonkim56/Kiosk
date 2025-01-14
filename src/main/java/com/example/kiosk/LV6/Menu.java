@@ -1,6 +1,7 @@
 package com.example.kiosk.LV6;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Menu {
     private List<MenuItem> menus;
@@ -29,10 +30,8 @@ public class Menu {
     //메뉴들 출력
     public void printMenus(Menu menu) {
         System.out.println("[ " + menu.getCategory() + " MENU ]");
-        int i = 1;
-        for (MenuItem menuItem : menus) {
-            System.out.println(i++ + ". " + menuItem.getName());
-        }
+        AtomicInteger i = new AtomicInteger(1);
+        menu.menus.stream().forEach(item -> System.out.println(i.getAndIncrement() + ". " + item.getName()));
         System.out.println("0. 뒤로가기      | 뒤로가기");
     }
 

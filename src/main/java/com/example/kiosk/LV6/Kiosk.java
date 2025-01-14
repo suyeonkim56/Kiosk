@@ -27,8 +27,7 @@ public class Kiosk {
             System.out.println("0. 종료      | 종료");
 
             //장바구니 존재시 출력
-            if(!basket.getBasket().isEmpty())
-            {
+            if (!basket.getBasket().isEmpty()) {
                 System.out.println("[ ORDER MENU ]");
                 System.out.println("4. Orders       | 장바구니를 확인 후 주문합니다.");
                 System.out.println("5. Cancel       | 진행중인 주문을 취소합니다.");
@@ -45,7 +44,7 @@ public class Kiosk {
                     continue;
                 } else if (choice <= burgers.getMenus().size() && choice > 0) {
                     burgers.printMenu(burgers, choice - 1);
-                    basket.addItem(burgers.getMenus().get(choice-1));
+                    basket.addItem(burgers.getMenus().get(choice - 1));
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }
@@ -59,7 +58,7 @@ public class Kiosk {
                     continue;
                 } else if (choice <= drinks.getMenus().size() && choice > 0) {
                     drinks.printMenu(drinks, choice - 1);
-                    basket.addItem(drinks.getMenus().get(choice-1));
+                    basket.addItem(drinks.getMenus().get(choice - 1));
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }
@@ -73,25 +72,24 @@ public class Kiosk {
                     continue;
                 } else if (choice <= desserts.getMenus().size() && choice > 0) {
                     desserts.printMenu(desserts, choice - 1);
-                    basket.addItem(desserts.getMenus().get(choice-1));
+                    basket.addItem(desserts.getMenus().get(choice - 1));
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }
             }
 
             //장바구니 주문
-            else if (input==4 && !basket.getBasket().isEmpty()) {
+            else if (input == 4 && !basket.getBasket().isEmpty()) {
                 double sum = basket.calItem();
                 int accept = sc.nextInt();
-                if(accept == 1)
-                {
+                if (accept == 1) {
                     System.out.println("할인 정보를 입력해주세요");
                     System.out.println("1. 국가유공자 : 10%");
                     System.out.println("2. 군인     :  5%");
                     System.out.println("3. 학생     :  3%");
                     System.out.println("4. 일반     :  0%");
                     int discountNumber = sc.nextInt();
-                    basket.calculation(discountNumber,sum);
+                    basket.calculation(discountNumber, sum);
                     break;
                 } else if (accept == 2) {
                     System.out.println("메뉴판으로 돌아갑니다.\n");
@@ -100,7 +98,7 @@ public class Kiosk {
                 }
             }
             //장바구니 초기화
-            else if (input==5 && !basket.getBasket().isEmpty()) {
+            else if (input == 5 && !basket.getBasket().isEmpty()) {
                 basket.resetItem();
             }
             //0 입력

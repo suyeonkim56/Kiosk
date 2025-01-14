@@ -5,7 +5,7 @@ public enum discount {
 
     private final double discountpercent;
 
-    discount(double discountpercent){
+    discount(double discountpercent) {
         this.discountpercent = discountpercent;
     }
 
