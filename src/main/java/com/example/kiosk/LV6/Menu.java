@@ -31,7 +31,7 @@ public class Menu {
     public void printMenus(Menu menu) {
         System.out.println("[ " + menu.getCategory() + " MENU ]");
         AtomicInteger i = new AtomicInteger(1);
-        menu.menus.stream().forEach(item -> System.out.println(i.getAndIncrement() + ". " + item.getName()));
+        menu.menus.forEach(item -> System.out.println(i.getAndIncrement() + ". " + item.getName()));
         System.out.println("0. 뒤로가기      | 뒤로가기");
     }
 
