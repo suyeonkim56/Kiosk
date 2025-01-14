@@ -41,10 +41,17 @@ public class Kiosk {
                 burgers.printMenus(burgers);
                 int choice = sc.nextInt();
                 if (choice == 0) {
-                    continue;
+                    System.out.println("메뉴판으로 돌아갑니다.");
                 } else if (choice <= burgers.getMenus().size() && choice > 0) {
                     burgers.printMenu(burgers, choice - 1);
-                    basket.addItem(burgers.getMenus().get(choice - 1));
+                    if(basket.getBasket().contains(burgers.getMenus().get(choice-1)))
+                    {
+                        basket.removeItem(burgers.getMenus().get(choice-1));
+                    }
+                    else
+                    {
+                        basket.addItem(burgers.getMenus().get(choice - 1));
+                    }
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }
@@ -55,10 +62,17 @@ public class Kiosk {
                 drinks.printMenus(drinks);
                 int choice = sc.nextInt();
                 if (choice == 0) {
-                    continue;
+                    System.out.println("메뉴판으로 돌아갑니다.");
                 } else if (choice <= drinks.getMenus().size() && choice > 0) {
                     drinks.printMenu(drinks, choice - 1);
-                    basket.addItem(drinks.getMenus().get(choice - 1));
+                    if(basket.getBasket().contains(drinks.getMenus().get(choice-1)))
+                    {
+                        basket.removeItem(drinks.getMenus().get(choice-1));
+                    }
+                    else
+                    {
+                        basket.addItem(drinks.getMenus().get(choice - 1));
+                    }
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }
@@ -69,10 +83,17 @@ public class Kiosk {
                 desserts.printMenus(desserts);
                 int choice = sc.nextInt();
                 if (choice == 0) {
-                    continue;
+                    System.out.println("메뉴판으로 돌아갑니다.");
                 } else if (choice <= desserts.getMenus().size() && choice > 0) {
                     desserts.printMenu(desserts, choice - 1);
-                    basket.addItem(desserts.getMenus().get(choice - 1));
+                    if(basket.getBasket().contains(desserts.getMenus().get(choice-1)))
+                    {
+                        basket.removeItem(desserts.getMenus().get(choice-1));
+                    }
+                    else
+                    {
+                        basket.addItem(desserts.getMenus().get(choice - 1));
+                    }
                 } else {
                     System.out.println("없는 메뉴를 선택하셨습니다. 다시 선택해주세요.");
                 }

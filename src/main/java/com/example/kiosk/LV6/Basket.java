@@ -34,6 +34,22 @@ public class Basket {
         }
     }
 
+    //장바구니에서 삭제
+    public void removeItem(MenuItem item)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("위 메뉴를 장바구니에 삭제하시겠습니까?");
+        System.out.println("1. 확인        2. 취소");
+        int answer = sc.nextInt();
+        if (answer == 1) {
+            basket.removeIf(menuItem -> menuItem.getName().equals(item.getName()));
+            System.out.println(item.getName() + " 이 장바구니에 삭제되었습니다.");
+        } else if (answer == 2) {
+            System.out.println("메뉴판으로 돌아갑니다.");
+        } else {
+            System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+        }
+    }
     //장바구니 초기화
     public void resetItem() {
         basket.clear();
