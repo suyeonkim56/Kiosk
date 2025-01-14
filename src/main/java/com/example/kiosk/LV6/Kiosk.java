@@ -81,8 +81,23 @@ public class Kiosk {
 
             //장바구니 주문
             else if (input==4 && !basket.getBasket().isEmpty()) {
-                basket.calItem();
-                break;
+                double sum = basket.calItem();
+                int accept = sc.nextInt();
+                if(accept == 1)
+                {
+                    System.out.println("할인 정보를 입력해주세요");
+                    System.out.println("1. 국가유공자 : 10%");
+                    System.out.println("2. 군인     :  5%");
+                    System.out.println("3. 학생     :  3%");
+                    System.out.println("4. 일반     :  0%");
+                    int discountNumber = sc.nextInt();
+                    basket.calculation(discountNumber,sum);
+                    break;
+                } else if (accept == 2) {
+                    System.out.println("메뉴판으로 돌아갑니다.\n");
+                } else {
+                    System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+                }
             }
             //장바구니 초기화
             else if (input==5 && !basket.getBasket().isEmpty()) {
