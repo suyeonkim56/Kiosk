@@ -1,9 +1,9 @@
-package com.example.kiosk.LV4;
+package com.example.kiosk.lv5;
 
 
 import java.util.List;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         //햄버거 메뉴
         MenuItem menu1 = new MenuItem(6.9, "ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거");

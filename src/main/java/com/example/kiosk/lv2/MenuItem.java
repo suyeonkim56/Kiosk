@@ -1,4 +1,4 @@
-package com.example.kiosk.LV2;
+package com.example.kiosk.lv2;
 
 public class MenuItem {
     private double price;

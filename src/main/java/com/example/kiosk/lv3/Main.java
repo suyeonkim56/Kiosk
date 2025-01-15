@@ -1,10 +1,9 @@
-package com.example.kiosk.LV3;
+package com.example.kiosk.lv3;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         MenuItem menu1 = new MenuItem(6.9,"ShackBurger","토마토, 양상추, 쉑소스가 토핑된 치즈버거");
         MenuItem menu2 = new MenuItem(8.9,"SmokeShack","베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");

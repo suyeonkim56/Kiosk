@@ -1,4 +1,4 @@
-package com.example.kiosk.LV6;
+package com.example.kiosk.lv6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,16 +77,16 @@ public class Basket {
     //할인 계산
     public void calculation(int discountNumber, double sum) {
         if (discountNumber == 1) {
-            double finalSum = sum - (discount.국가유공자.getDiscountpercent() * sum / 100);
+            double finalSum = sum - (Discount.국가유공자.getDiscountpercent() * sum / 100);
             System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         } else if (discountNumber == 2) {
-            double finalSum = sum - (discount.군인.getDiscountpercent() * sum / 100);
+            double finalSum = sum - (Discount.군인.getDiscountpercent() * sum / 100);
             System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         } else if (discountNumber == 3) {
-            double finalSum = sum - (discount.학생.getDiscountpercent() * sum / 100);
+            double finalSum = sum - (Discount.학생.getDiscountpercent() * sum / 100);
             System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         } else if (discountNumber == 4) {
-            double finalSum = sum - (discount.일반.getDiscountpercent() * sum / 100);
+            double finalSum = sum - (Discount.일반.getDiscountpercent() * sum / 100);
             System.out.println("주문이 완료되었습니다. 금액은 W " + String.format("%.1f", finalSum) + " 입니다.");
         }
     }

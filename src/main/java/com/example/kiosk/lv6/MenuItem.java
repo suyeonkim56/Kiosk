@@ -1,4 +1,4 @@
-package com.example.kiosk.LV4;
+package com.example.kiosk.lv6;
 
 public class MenuItem {
     private double price;
@@ -6,8 +6,8 @@ public class MenuItem {
     private String explain;
 
     //생성자
-    public MenuItem(double price, String name, String explain){
-        this.price =price;
+    public MenuItem(double price, String name, String explain) {
+        this.price = price;
         this.name = name;
         this.explain = explain;
     }

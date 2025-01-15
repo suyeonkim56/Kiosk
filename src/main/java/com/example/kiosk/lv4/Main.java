@@ -1,9 +1,9 @@
-package com.example.kiosk.LV6;
+package com.example.kiosk.lv4;
 
 
 import java.util.List;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         //햄버거 메뉴
         MenuItem menu1 = new MenuItem(6.9, "ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
@@ -29,7 +29,6 @@ public class main {
         Menu Burgers = new Menu(burgers, "BURGERS");
         Menu Drinks = new Menu(drinks, "DRINKS");
         Menu Desserts = new Menu(dessert, "DESSERTS");
-
         //Kiosk 객체 생성
         Kiosk Kiosk = new Kiosk(Burgers, Drinks, Desserts);
 

@@ -1,11 +1,11 @@
-package com.example.kiosk.LV6;
+package com.example.kiosk.lv6;
 
-public enum discount {
+public enum Discount {
     국가유공자(10), 군인(5), 학생(3), 일반(0);
 
     private final double discountpercent;
 
-    discount(double discountpercent) {
+    Discount(double discountpercent) {
         this.discountpercent = discountpercent;
     }
 

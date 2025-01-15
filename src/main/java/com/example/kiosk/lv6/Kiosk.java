@@ -1,4 +1,4 @@
-package com.example.kiosk.LV6;
+package com.example.kiosk.lv6;
 
 import java.util.Scanner;
 
@@ -17,8 +17,8 @@ public class Kiosk {
 
 
     public void start() {
-        Scanner sc = new Scanner(System.in);
         while (true) {
+            Scanner sc = new Scanner(System.in);
             //상위 카테고리 출력
             System.out.println("[MAIN MENU]");
             System.out.println("1. " + burgers.getCategory());

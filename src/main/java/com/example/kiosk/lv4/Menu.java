@@ -1,6 +1,5 @@
-package com.example.kiosk.LV4;
+package com.example.kiosk.lv4;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
