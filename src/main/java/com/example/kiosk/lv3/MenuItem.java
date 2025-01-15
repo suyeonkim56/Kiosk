@@ -12,7 +12,7 @@ public class MenuItem {
         this.explain = explain;
     }
 
-    //getter setter
+    //getter
     public double getPrice() {
         return price;
     }

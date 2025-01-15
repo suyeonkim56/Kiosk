@@ -13,17 +13,13 @@ public class Menu {
         this.category = category;
     }
 
-    //getter and setter
+    //getter
     public List<MenuItem> getMenus() {
         return menus;
     }
 
     public String getCategory() {
         return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
 

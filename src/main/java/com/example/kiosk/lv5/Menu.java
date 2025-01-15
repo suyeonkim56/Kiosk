@@ -12,7 +12,7 @@ public class Menu {
         this.category = category;
     }
 
-    //getter and setter
+    //getter
     public List<MenuItem> getMenus() {
         return menus;
     }
@@ -21,9 +21,6 @@ public class Menu {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
 
     //메뉴들 출력

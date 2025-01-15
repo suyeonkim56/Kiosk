@@ -6,8 +6,8 @@ import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Basket {
-    List<MenuItem> basket = new ArrayList<>();
-
+    private List<MenuItem> basket = new ArrayList<>();
+    private Scanner sc = new Scanner(System.in);
     //생성자
     public void setBasket(List<MenuItem> basket) {
         this.basket = basket;
@@ -20,7 +20,6 @@ public class Basket {
 
     //장바구니에 추가
     public void addItem(MenuItem item) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인        2. 취소");
         int answer = sc.nextInt();
@@ -37,7 +36,6 @@ public class Basket {
     //장바구니에서 삭제
     public void removeItem(MenuItem item)
     {
-        Scanner sc = new Scanner(System.in);
         System.out.println("위 메뉴를 장바구니에 삭제하시겠습니까?");
         System.out.println("1. 확인        2. 취소");
         int answer = sc.nextInt();
@@ -57,7 +55,6 @@ public class Basket {
 
     //장바구니 계산
     public double calItem() {
-        Scanner sc = new Scanner(System.in);
         double sum = 0;
         AtomicInteger i = new AtomicInteger(1);
         for (MenuItem menuItem : basket) {

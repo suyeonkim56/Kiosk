@@ -13,6 +13,7 @@ public class Menu {
         this.category = category;
     }
 
+    //getter
     public List<MenuItem> getmenus() {
         return menus;
     }
@@ -21,10 +22,7 @@ public class Menu {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
+    //메뉴 프린트
     public void printMenus(Menu menu){
         System.out.println("[ " + menu.getCategory()+" MENU ]");
         int i=1;
